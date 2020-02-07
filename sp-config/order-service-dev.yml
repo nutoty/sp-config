@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: order-service
+    
+server:
+  port: 8201
+
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka
+  
+  
+  
+#启用hystix服务
+feign:
+  hystrix:
+    enabled: true
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream 
+
+
+
+
+
